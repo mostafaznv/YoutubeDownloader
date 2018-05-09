@@ -49,6 +49,23 @@ $youtube->setPath('/path/to/folder'); // without trailing slash
 When you install it as a dependency, there need to be a `cache` directory beside `vendor`
 and it should be writable (e.g. `chmod 777`).
 
+Configuration
+-----
+You can pass an array to second parameter of `__construct` to set some configs.
+```php
+<?php
+include 'vendor/autoload.php';
+
+use Masih\YoutubeDownloader\YoutubeDownloader;
+
+$youtube = new YoutubeDownloader('gmFn62dr0D8', ['file_name_language' => 'fa']);
+$youtube->download();
+```
+
+|Name|Type|Default|Description|
+|--- |--- |--- |--- |
+|file_name_language|string|`en`|set primary language of file names<br> only `farsi` and `arabic` are supported now|
+
 
 Usage
 -----
