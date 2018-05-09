@@ -196,7 +196,7 @@ If you are not happy with this method, you can set a closure for `sanitizeFileNa
 <?php
 $youtube = new YoutubeDownloader('PLbjM1u8Yb9I0rK4hkPa9TWe4N_idJOnrJ');
 
-$this->sanitizeFileName = function ($fileName) use ($youtube) {
+$youtube->sanitizeFileName = function ($fileName) use ($youtube) {
     return str_replace('_', ' ', $youtube->pathSafeFilename($fileName));
 };
 
